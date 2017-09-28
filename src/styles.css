@@ -70,6 +70,10 @@
 body {
   position: relative;
 }
+
+#side-menu{
+  border: 1px solid #520707;
+}
 /**/
 
 /**/
