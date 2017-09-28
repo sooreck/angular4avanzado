@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top bg-transition" id="menu">
+  <a class="navbar-brand" [routerLink]="['/home']">{{brand}}</a>
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto ">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/home']" [routerLinkActive]="['active','actived']">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"[routerLink]="['/animales']" [routerLinkActive]="['active','actived']">Animales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/cuidadores']" [routerLinkActive]="['active','actived']">Cuidadores</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/tienda']" [routerLinkActive]="['active','actived']">Tienda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/contacto']" [routerLinkActive]="['active','actived']">Contacto</a>
+      </li>
+    
+
+    </ul>
+    <ul class="navbar-nav navbar-right " *ngIf="identity == null">
+      <li>
+        <a class="nav-link" [routerLink]="['/register']" [routerLinkActive]="['active','actived']">
+        <span>
+          <i class="fa fa-users" aria-hidden="true"></i>
+          Registro</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" [routerLink]="['/login']" [routerLinkActive]="['active','actived']">
+        <span><i class="fa fa-user-o" aria-hidden="true"></i>Login</span>
+        </a>
+      </li>
+
+    </ul>
+    <ul class="navbar-nav navbar-right mr-5" *ngIf="identity != null" >
+
+      <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{identity.name}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" [routerLink]="['/misdatos']" [routerLinkActive]="['active']">
+            <span><i class="fa fa-address-book-o" aria-hidden="true"></i>
+              Mis datos</span>
+            </a>
+            <a class="dropdown-item" [routerLink]="['/admin']" [routerLinkActive]="['active']" *ngIf="identity != null && identity.role == 'ROLE_ADMIN'">
+              <span><i class="fa fa-tasks" aria-hidden="true"></i>
+                Administración</span>
+              </a>
+              <a class="dropdown-item" [routerLinkActive]="['active']" (click)="logout()">
+                <span>
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Log out</span>
+                </a>
+
+        </div>
+      </div>
+
+
+
+    </ul>
+  </div>
+</nav>

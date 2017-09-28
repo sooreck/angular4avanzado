@@ -1,0 +1,46 @@
+<div class="container my-4">
+  <div class="card">
+    <div class="card-header">
+      Agrega un nuevo animal
+    </div>
+    <div class="card-body">
+      <h2>Formulario </h2>
+      <form>
+        <div class="row">
+          <div class="col">
+            <div class="col-md mb-3">
+              <label for="validationServer01">Nombre</label>
+              <input type="text" class="form-control" id="validationServer01" placeholder="Escribe el nombre" required>
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer02">Año</label>
+              <input type="text" class="form-control" id="validationServer02" placeholder="Escribe el año" required>
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer03">Descripción</label>
+              <textarea type="text" class="form-control" id="validationServer03" placeholder="Agrega una descripción" required></textarea>
+              <div class="invalid-feedback">
+                Please provide a valid city.
+              </div>
+            </div>
+            <div class="col-md">
+              <button class="btn btn-outline-primary btn-lg btn-block" type="submit">Agregar</button>
+            </div>
+          </div>
+          <div class="col d-none d-lg-block d-flex justify-content-center">
+            <img src="../../../assets/img/logo.png" id="logo-add">
+          </div>
+        </div>
+
+
+      </form>
+    </div>
+  </div>
+  <br>
+  <div class="alert alert-success" role="alert">
+    Se agrego correctamente
+  </div>
+  <div class="alert alert-danger" role="alert">
+    No se agrego!!
+  </div>
+</div>

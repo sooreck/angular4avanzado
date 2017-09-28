@@ -1,0 +1,124 @@
+<div class="container my-5 pt-5">
+  <div class="card my-5 sombrita">
+    <div class="card-header">
+      Registrate
+    </div>
+    <div class="card-body">
+      <h2>Formulario </h2>
+      <form #formRegister="ngForm" id="formEvent" name="formRegister" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col">
+            <div class="col-md mb-3">
+              <label for="validationServer01">Nombre</label>
+              <input type="text" class="form-control" #name="ngModel" [(ngModel)]="user.name" name ="name" id="validationServer01" placeholder="Escribe tu nombre"  required
+               email-directive minlength="2" pattern="^[a-z A-Z]+$">
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="name.touched && !name.valid">
+                <span *ngIf="name.errors.required">
+                     El nombre es requerido
+                </span>
+                <span *ngIf="name.errors.minlength">
+                  Pocos caracteres
+                </span>
+                <p *ngIf="name.errors.pattern">
+                  No esta permitido los caracteres
+                </p>
+            </div>
+
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer01">Apellido</label>
+              <input type="text" class="form-control" #surname="ngModel" [(ngModel)]="user.surname" id="surname" placeholder="Escribe tu apellido" name="surname" required
+              minlength="2" pattern="^[a-z A-Z]+$">
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="surname.touched && !surname.valid">
+                <span *ngIf="surname.errors.required">
+                     El apellido es requerido
+                </span>
+                <span *ngIf="surname.errors.minlength">
+                  Pocos caracteres
+                </span>
+                <span *ngIf="surname.errors.pattern">
+                  No esta permitido los caracteres
+                </span>
+            </div>
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer01">Correo electrónico</label>
+              <input type="text" class="form-control" #email="ngModel" [(ngModel)]="user.email" id="validationServer01" placeholder="Escribe tu e - mail" name="email" required
+              pattern="^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$">
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="email.touched && !email.valid">
+                <span *ngIf="email.errors.required">
+                     El correo es requerido
+                </span>
+                <span *ngIf="email.errors.pattern">
+                  Debe contener el siguiente formato ejemplo@algo.dom
+             </span>
+            </div>
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer01">Password</label>
+              <input type="password" class="form-control" #password="ngModel" [(ngModel)]="user.password" id="validationServer01" placeholder="Escribe tu nueva contraseña" name="password" required
+              minlength="6" maxlength="16" validate-equal="confirmPassword" reverse="true" >
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="password.touched && !password.valid">
+                <span *ngIf="password.errors.required">
+                     La password es requerida
+                </span>
+                <span *ngIf="password.errors.minlength">
+                  La password debe contener al menos 6 caracteres
+                </span>
+                <span *ngIf="password.errors.maxlength">
+                  La password debe contener como maximo 16 caracteres
+                </span>
+            </div>
+
+            </div>
+
+            <div class="col-md mb-3">
+              <label for="validationServer01">Confirma Password</label>
+              <input type="password" class="form-control" #confirmPassword="ngModel" [(ngModel)]="user.confirmPassword" id="validationServer01" placeholder="Confirma tu nueva contraseña" name="confirmPassword" required
+              minlength="6" maxlength="16" validate-equal="password" reverse="false">
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="confirmPassword.touched && !confirmPassword.valid">
+                <span *ngIf="!confirmPassword.valid">
+                  Debe coincidir con tu password
+                </span>
+              </div>
+            </div>
+            <div class="col-md mb-3">
+              <label for="validationServer01">Fecha de nacimiento</label>
+              <div class="input-group date" id="dateOfB">
+                <input  placeholder="fecha de nacimiento" id="inputDateOfBirth" type="text" class="form-control"
+                       #dateOfBirth="ngModel" [(ngModel)]="user.dateOfBirth" name="dateOfBirth" required>
+                        <span class="input-group-addon">
+                          <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        </span>
+
+              </div>
+              <div class="col-12 d-flex justify-content-start invalid-feedback" *ngIf="dateOfBirth.touched && !dateOfBirth.valid">
+                <span *ngIf="!dateOfBirth.errors.required">
+                  Falta por rellenar
+                </span>
+              </div>
+            </div>
+
+
+            <div class="col-md">
+              <button class="btn btn-outline-success btn-lg btn-block" type="submit" [disabled]="!formRegister.form.valid" >Registrate</button>
+            </div>
+          </div>
+          <div class="col d-none d-lg-block">
+
+          </div>
+        </div>
+        <br>
+        <p>{{getUser()}}</p>
+        <p>{{getUserJeather()}}</p>
+
+      </form>
+    </div>
+  </div>
+  <div class="alert alert-success" *ngIf="seregistro != null && seregistro" role="alert">
+    Se agrego correctamente
+  </div>
+  <div class="alert alert-success" *ngIf="seregistro != null && !seregistro" role="alert">
+    Se agrego correctamente
+  </div>
+</div>

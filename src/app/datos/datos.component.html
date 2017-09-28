@@ -1,0 +1,56 @@
+<div class="container my-5 pt-5">
+  <div class="card mt-2">
+    <div class="card-header">
+      Tabla de Back-End
+    </div>
+    <div class="card-body">
+      <h2>Usuarios Registrados </h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+      
+        <tr *ngFor="let persona of personas; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{persona.nombre}}</td>
+          <td>{{persona.apellido}}</td>
+
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<div class="container my-1">
+  <div class="card my-5">
+    <div class="card-header">
+      Tabla de Front-End
+    </div>
+    <div class="card-body">
+      <h2>Usuarios Registrados </h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of usuarios; let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{user.name}}</td>
+          <td>{{user.surname}}</td>
+
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

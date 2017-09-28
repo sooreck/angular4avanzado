@@ -1,0 +1,99 @@
+<div class="container my-5 pt-5">
+  <div class="card my-5 sombrita">
+    <div class="card-header">
+      Bienvenido
+    </div>
+    <div class="card-body">
+            <h2 class="row d-flex justify-content-center">Inicia Sesión </h2>
+      <hr>
+      <!-- <img src="http://192.168.0.25:8000/img.jpg" alt="img"> -->
+      <form #formLogin="ngForm" name="formLogin" (ngSubmit)="onSubmit()">
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="col-12">
+                      
+                        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user" aria-hidden="true"></i>
+                            </div>
+                            <input type="email" #email="ngModel" [(ngModel)]="user.email" name="email"  class="form-control"  id="email" placeholder="ejemplo@email.com"
+                            required autofocus email-directive>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex justify-content-start invalid-feedback">
+                        <span *ngIf="email.dirty && !email.valid">
+                            <i class="fa fa-close" aria-hidden="true"></i> Ingresa un email valido
+                        </span>
+                    </div>
+                     
+                  </div>
+              </div>
+              <div class="col-md-3">
+                              
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="col-12">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-lock" aria-hidden="true"></i>
+                                </div>
+                                <input type="password" #password="ngModel" [(ngModel)]="user.password" name="password" class="form-control" id="password"
+                                       placeholder="Password" required>
+                            </div>
+                        
+                    </div>
+                    <div class="col-12 d-flex justify-content-start invalid-feedback">
+                        <span *ngIf="password.touched && !password.valid">
+                            <i class="fa fa-close"></i> Ingresa una contraseña valida
+                        </span>
+                    </div>
+                     
+                  </div>
+              </div>
+              <div class="col-md-3">
+                              
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6" style="padding-top: .35rem">
+                <div class="col-12">
+                  
+                  <div class="form-check mb-2 mr-sm-2 mb-sm-0">
+                      <label class="form-check-label">
+                          <input class="form-check-input" name="remember"
+                                 type="checkbox" >
+                          <span style="padding-bottom: .15rem">Recordar mis datos</span>
+                      </label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="row" style="padding-top: 1rem">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                <div class="col-12">
+                  <button type="submit" class="btn btn-outline-success btn-lg btn-block" [disabled]="!formLogin.form.valid"><i class="fa fa-sign-in"></i> Login</button>
+                  
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="btn btn-link" href="">Olvidaste tu contraseña?</a>
+                </div>
+              </div>
+            </div>
+        <div class="row">
+          
+          
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="status == 'error'">
+    Password Incorrecta
+  </div>
+</div>

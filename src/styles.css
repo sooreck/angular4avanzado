@@ -1,0 +1,75 @@
+/* You can add global styles to this file, and also import other style files */
+.header{
+  background: url(assets/img/ngzoo.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 80vh;
+}
+
+.transparent-nav{
+  background-color: rgba(0,0,0,.1);
+}
+.bg-transition{
+  transition: all 1s ease;
+}
+
+.navbar-nav .actived{
+  border-bottom: 3px #eee solid;
+  font-weight: bold;
+}
+
+.navbar-nav .bg-light{
+  transition: all 1s ease;
+}
+.sidebar-nav{
+  background: #4b6066 !important;
+  height: 100%;
+  padding-right: 0 !important;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;/*Para IE y ME cuando el contenido se desborda como se comporta el scroll*/
+  min-height: 100%;
+}
+.head-nav{
+  background: #263238 !important;
+}
+.sidebar-nav ul li :hover{
+  color: #eee;
+}
+.sidebar-nav ul li a{
+  color: white;
+}
+.main{
+  background: #eee;
+}
+#sidebar-content, #main-content {
+  padding-right: 0;
+  padding-left: 0;
+}
+#logo-add{
+  max-width: 70%;
+  height: auto;
+
+}
+
+.sombrita {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.bg-alpha {
+  background: rgba(0, 0, 0, 0.5) ;
+}
+.grisesito {
+ background: #eee !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+body {
+  position: relative;
+}
+/**/
+
+/**/

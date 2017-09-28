@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col-sm-4 col-md-2 d-block" id="sidebar-content"> <!-- d-none lo esconde por lo que se puede esconder en ejecucion y d-block muestra-->
+      <nav class="bg-light sidebar-nav bg-dark text-white">
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item head-nav text-white">
+            <span class="nav-link my-2">Bienvenido {{identity.name}}</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['list']" [routerLinkActive]="['active']" >Listado</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['add']" [routerLinkActive]="['active']">Agregar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['users']" [routerLinkActive]="['active']">Usuarios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['edit']" [routerLinkActive]="['active']">Editar</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <main class="main col-sm-8 col-md-10" id="main-content">
+      <router-outlet></router-outlet>
+    </main>
+
+  </div>
+</div>
+
+
